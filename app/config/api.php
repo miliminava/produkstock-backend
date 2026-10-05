@@ -145,7 +145,6 @@ $config['users_table'] = 'users';
 |
 */
 $config['allow_origin'] = [
-    'https://api-tester.marasigan.dev',
     'https://produkstock-frontend.vercel.app'
 ];
 
