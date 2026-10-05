@@ -44,8 +44,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 | below (see their notes). The API library refuses to start otherwise.
 |
 */
-$config['api_helper_enabled'] = FALSE;
-
+$config['api_helper_enabled'] = TRUE;
 /*
 |--------------------------------------------------------------------------
 | Payload Token Expiration
@@ -145,7 +144,11 @@ $config['users_table'] = 'users';
 | a browser, so set your real domain in production.
 |
 */
-$config['allow_origin'] = '*';
+$config['allow_origin'] = [
+    'https://api-tester.marasigan.dev',
+    'https://maliglig-juren-backend.onrender.com',
+    
+];
 
 /*
 |--------------------------------------------------------------------------

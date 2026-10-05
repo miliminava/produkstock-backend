@@ -43,5 +43,23 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 |
 */
 /** @var object $router **/
+// Migration Routes
+$router->get('create-migration/{migration_class}', 'MigrationController::create_migration');
+$router->get('migrate', 'MigrationController::migrate');
+$router->get('rollback', 'MigrationController::rollback');
+$router->get('rollback-all', 'MigrationController::rollback_all');
+$router->get('refresh', 'MigrationController::refresh');
+$router->get('status', 'MigrationController::status');
 
 $router->get('/', 'Welcome::index');
+
+//API
+$router->group(['prefix' => 'api'], function($router) {
+    $router->post('/login', 'ApiController::login');
+    $router->post('/register', 'ApiController::register');
+    $router->post('/logout', 'ApiController::logout');
+    $router->post('/create', 'ApiController::add');
+    $router->put('/edit/{id}', 'ApiController::edit');
+    $router->delete('/delete/{id}', 'ApiController::delete');
+    $router->get('/list', 'ApiController::list');
+});
