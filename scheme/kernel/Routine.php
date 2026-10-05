@@ -474,6 +474,7 @@ if ( ! function_exists('handle_cors'))
 	 */
 	function handle_cors()
 	{
+		lava_instance()->config->load('api');
 		$allow_origin = config_item('allow_origin');
 		$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 
